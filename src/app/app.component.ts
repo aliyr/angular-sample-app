@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MessageService} from './services/message/message.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-tour-of-heroes';
+  title = 'Tour of heroes';
+  constructor(private messageService: MessageService) {
+    // messageService.pushNotification$.subscribe(
+    //   notif => {
+    //     alert(notif);
+    //   }
+    // );
+  }
+  onDestroy() {
+    // this.messageService.pushNotification$.unsubscribe();
+  }
+
 }
